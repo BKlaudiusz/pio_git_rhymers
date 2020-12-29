@@ -9,7 +9,7 @@ int totalRejected = 0;
 	}
 
 	public void countIn(int in) {
-	if (!callCheck() && in > peekaboo())
+	if (!callCheck() && in > getLast())
 		totalRejected++;
 	else
 		super.countIn(in);
