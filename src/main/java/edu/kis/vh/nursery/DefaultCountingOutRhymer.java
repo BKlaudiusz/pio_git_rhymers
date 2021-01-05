@@ -7,11 +7,19 @@ public class DefaultCountingOutRhymer {
 
 	private final int[] numbers = new int[INT1];
 
+	public int[] getNumbers() {
+		return numbers;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
 	private int total = INT;
 	
 	public void countIn(int in) {
 		if (!isFull())
-			numbers[++total] = in;
+			getNumbers()[++total] = in;
 	}
 
 	public boolean callCheck() {
@@ -25,13 +33,13 @@ public class DefaultCountingOutRhymer {
 	protected int getLast() {
 		if (callCheck())
 			return INT;
-		return numbers[total];
+		return getNumbers()[total];
 	}
 
 	public int countOut() {
 		if (callCheck())
 			return INT;
-		return numbers[total--];
+		return getNumbers()[total--];
 	}
 
 }
