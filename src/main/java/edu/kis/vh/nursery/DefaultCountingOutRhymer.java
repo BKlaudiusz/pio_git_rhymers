@@ -2,10 +2,9 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-	public static final int INT = -1;
-	public static final int INT1 = 12;
-
-	private final int[] numbers = new int[INT1];
+	public static final int ERRORRETURN = -1;
+	public static final int SIZEARRAY = 12;
+	private final int[] numbers = new int[SIZEARRAY];
 
 	public int[] getNumbers() {
 		return numbers;
@@ -15,7 +14,7 @@ public class DefaultCountingOutRhymer {
 		return total;
 	}
 
-	private int total = INT;
+	private int total = ERRORRETURN;
 	
 	public void countIn(int in) {
 		if (!isFull())
@@ -23,22 +22,22 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public boolean callCheck() {
-		return total == INT;
+		return total == ERRORRETURN;
 	}
 
 	public boolean isFull() {
-		return total == 11;
+		return total == SIZEARRAY-1;
 	}
 
 	protected int getLast() {
 		if (callCheck())
-			return INT;
+			return ERRORRETURN;
 		return getNumbers()[total];
 	}
 
 	public int countOut() {
 		if (callCheck())
-			return INT;
+			return ERRORRETURN;
 		return getNumbers()[total--];
 	}
 
